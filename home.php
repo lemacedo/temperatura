@@ -7,7 +7,7 @@
 <body>
 
 <?php
-include"pegainfo.class.php";
+require_once"pegainfo.class.php";
 
 $temp=new Pegainfo;
 $graus=$temp->temperatura();
@@ -15,6 +15,8 @@ $graus=$temp->temperatura();
 echo $graus."ºC";
 
 ?>
+
+<img src="img/nublado.svg" />
 
 </body>
 </html>
