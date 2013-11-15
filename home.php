@@ -5,11 +5,11 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Temperatura</title>
 </head>
-<body>
+<body onload="alteraImg();">
 
 <div id="corpo">
 	<div id="imagem">
-		<img src="img/sol.png">
+		<img id="foto" src="img/nublado.svg">
 	</div>
 	<div id="temperatura">
 <?php
@@ -17,13 +17,23 @@
 
 	$temp=new Pegainfo;
 	$graus=$temp->temperatura();
-	echo $graus."ºC";
+	echo $graus."º";
 
 ?>
 	</div>
-</div> <!--Fim div corpo--!>
+
+</div> <!--Fim div corpo-->
 
 
-
+<script type="text/javascript">
+	function alteraImg(){
+	var temp= 29;//<?php echo $graus  ?>;
+		if(temp <= 20){
+		document.getElementById("foto").src = "img/nublado.svg"
+	}else{
+		document.getElementById("foto").src = "img/sol.png"
+	}
+}
+</script>
 </body>
 </html>
