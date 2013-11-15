@@ -1,0 +1,31 @@
+body{
+	margin:0;
+	padding: 0;
+}
+
+#corpo{
+	width:25%;
+	height: 400px;
+	margin: 5% auto;
+	background: #9FC5E9;
+	border: 2px solid #0F6ABD;
+}
+
+#corpo #imagem{
+	width: 100%;
+	height: 50%;
+	border-bottom: solid #073861;
+}
+
+#corpo #imagem img{
+	height: 97%;
+	margin:auto;
+	padding: 0 15% 0 5%;
+}
+
+#corpo #temperatura{
+	height: 50%;
+	font-family:Verdana;
+	font-size: 760%;
+	font-weight: bold;
+}
