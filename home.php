@@ -27,11 +27,11 @@
 
 <script type="text/javascript">
 	function alteraImg(){
-	var temp= 29;//<?php echo $graus  ?>;
+		var temp= <?php echo $graus  ?>;
 		if(temp <= 20){
-		document.getElementById("foto").src = "img/nublado.svg"
-	}else{
-		document.getElementById("foto").src = "img/sol.png"
+			document.getElementById("foto").src = "img/nublado.svg"
+		}else{
+			document.getElementById("foto").src = "img/sol.png"
 	}
 }
 </script>

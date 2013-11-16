@@ -1,6 +1,7 @@
 body{
 	margin:0;
 	padding: 0;
+	background: #C8AA8F;
 }
 
 #corpo{
@@ -15,6 +16,7 @@ body{
 	width: 100%;
 	height: 50%;
 	border-bottom: solid #073861;
+	background: #009933;
 }
 
 #corpo #imagem img{

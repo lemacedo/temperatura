@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Desenho Termometro</title>
+</head>
+<body onload="desenha();" >
+	<canvas id="termo" width="500" height="500" style="border:1px solid black">
+	</canvas>
+	<form>
+		<input type="button" id="aumenta" value="Aumenta"onclick="aumt();">
+		<input type="button" id="aumenta" value="Exiba"onclick="desenha();">
+	</form>
+
+<script type="text/javascript">
+function aumt(){
+	 return 5;
+}
+function desenha(){
+
+	var canvas = document.getElementById("termo");
+	var context = canvas.getContext("2d");
+
+	//Retangulo
+	context.beginPath();
+	context.rect(canvas.width/2-100,(canvas.height/2)-240,200,480);
+	context.fillStyle= '#006633';
+	context.fill();
+
+	//Mercurio
+
+	//Vidro
+	context.beginPath();
+	context.lineWidth = 30;
+	context.strokeStyle = "#999";
+	context.moveTo((canvas.width/2), 400); //posicao (left (x), top (y))
+	context.lineTo((canvas.width/2),50); // posicao(rigth(x), bottom(y) )
+	context.globalAlpha = 0.2;
+	context.lineCap='round';
+	context.stroke();
+
+	//Vidro Embolo
+	context.beginPath();
+	context.arc(canvas.width/2, 430, 50,0,9, true); //(x,y,tamanho,completo,(9.8),)
+	context.fillStyle='red';
+	context.globalAlpha = 1;
+	context.fill();
+	context.lineWidth = 5;
+	context.strokeStyle= 'red';
+	context.globalAlpha = 1;
+	context.stroke();
+
+	//Embolo
+	context.beginPath();
+	context.arc(canvas.width/2, 430, 50,0,9, true); //(x,y,tamanho,completo,(9.8),)
+	context.fillStyle='#999';
+	context.globalAlpha = 0.2;
+	context.fill();
+	context.lineWidth = 0;
+	context.strokeStyle= '#999';
+	context.globalAlpha = 0.2;
+	context.stroke();
+
+	//mercurio();
+	loop();
+}
+
+function loop(){
+	window.setInterval(function(){
+		mercurio();
+		alert("Carregou");
+	},50);
+}
+
+function mercurio(){
+	alert('Carregou a funcao mercurio ;)');
+	var temp = 20;
+//	temp = (temp + aumt());
+	//temp = temp+5;
+	var alt = (40 - temp )*10;
+
+	var canvas = document.getElementById("termo");
+	var context = canvas.getContext("2d");
+
+	context.beginPath();
+	context.lineWidth = 30;
+	context.strokeStyle = "red";
+	context.moveTo((canvas.width/2), 400); //posicao (left (x), top (y))
+	context.lineTo((canvas.width/2),alt); // posicao(rigth(x), bottom(y) )
+	context.globalAlpha = 1;
+	context.lineCap='round';
+	context.stroke();
+}
+
+</script>
+</body>
+</html>
